@@ -29,7 +29,7 @@ class MemberRepositoryV0Test {
         Member updateMember=memberRepositoryV0.findById(member.getMemberId());
         log.info("findMember={}",updateMember);
         assertThat(updateMember.getMoney()).isEqualTo(100000);
-        
+
         memberRepositoryV0.delete(member.getMemberId());
         assertThatThrownBy(()->memberRepositoryV0.findById(member.getMemberId()))
                 .isInstanceOf(NoSuchElementException.class);
